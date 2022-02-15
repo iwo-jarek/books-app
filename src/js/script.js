@@ -11,7 +11,6 @@
       bookList: '.books-list',
       bookImage: '.book__image',
       bookFilters: '.filters',
-
     },
   };
 
@@ -48,8 +47,7 @@
           name: book.name,
           price: book.price,
           rating: book.rating,
-          image: book.image,
-          
+          image: book.image, 
         };
 
         const generatedHTML = templates.books(newObject);
@@ -74,9 +72,7 @@
           bookImage.classList.add('favorite');
         } else {
           bookImage.classList.remove('favorite');
-         
-          thisBooksList.favoriteBooks = thisBooksList.favoriteBooks.filter((book) => book !== id);
-          
+          thisBooksList.favoriteBooks = thisBooksList.favoriteBooks.filter((book) => book !== id); 
         }
       });
       const bookFilter = document.querySelector(select.containerOf.bookFilters);
@@ -128,8 +124,6 @@
       return background;
     }
   }  
-
   // eslint-disable-next-line no-unused-vars
   const app = new BooksList();
-
 }
