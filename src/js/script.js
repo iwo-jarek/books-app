@@ -49,7 +49,7 @@
           price: book.price,
           rating: book.rating,
           image: book.image,
-          rating: book.rating,
+          
         };
 
         const generatedHTML = templates.books(newObject);
@@ -74,9 +74,12 @@
           bookImage.classList.add('favorite');
         } else {
           bookImage.classList.remove('favorite');
+         
+          thisBooksList.favoriteBooks = thisBooksList.favoriteBooks.filter((book) => book !== id);
+          
         }
       });
-      const bookFilter = element.querySelector(select.containerOf.bookFilters);
+      const bookFilter = document.querySelector(select.containerOf.bookFilters);
 
       bookFilter.addEventListener('click', function(callback){
         const clickedElem = callback.target;
@@ -125,7 +128,8 @@
       return background;
     }
   }  
-}
-  const app = new BooksList(); 
-}
 
+  // eslint-disable-next-line no-unused-vars
+  const app = new BooksList();
+
+}
